@@ -7,3 +7,5 @@ werkzeug
 datetime
 urllib
 functools
+gunicorn
+psycopg2
