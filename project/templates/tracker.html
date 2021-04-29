@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    COVID-19 Tracker
+{% endblock %}
+
+
+{% block section%}
+  <section class="inner-page">
+  <div class="container">
+    <h1 class="p-1 mb-2">Covid-19 Tracker</h1>
+    <div class="card mt-5 p-4">
+        <form method="post" action="/tracker">
+        <div class="input-group mb-3"> <input type="text" class="form-control" autocomplete="off" placeholder="Search" name="search">
+        <div class="input-group-append"><button type="submit" class="btn btn-primary"><i class="ri-search-line"></i></button></div>
+        </form>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h2 class="p-1 mb-2">
+            {{country}}
+        </h2>
+            <p><b><span style="color:red">Confirmed: {{info["confirmed"]}}</span></b></p>
+            <p><b><span style="color:green">Recovered: {{info["recovered"]}}</span></b></p>
+            <p><b><span style="color:#f7b500">Critical: {{info["critical"]}}</span></b></p>
+            <p><b><span style="color:grey">Deaths: {{info["deaths"]}}</span></b></p>
+            <p><span style="color:#ef6603">Last Updated: {{info["lastUpdate"]}}</span></p>
+    </div>
+      </div>
+
+    </div>
+    <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="https://www.bing.com/covid/local/{{country | lower}}?vert=vaccineTracker"></iframe>
+    </div>
+  </div>
+  </section>
+
+{% endblock %}
+

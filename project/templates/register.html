@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block css %} <link href="static/css/login.css" rel="stylesheet"> {% endblock %}
+
+{% block section %}
+
+    <section class="inner-page">
+      <div class="container">
+        <div class="main register">
+    <p class="covaccine-heading" align="center">Covaccine</p>
+    <p class="sign" align="center">Register now!</p>
+    <form class="form1" action="/register" method="POST">
+        <input class="un " type="email" align="center" autocomplete="off" autofocus name="email" placeholder="Email" required>
+        <input class="pass" type="password" align="center" placeholder="Password" name="password" required>
+        <input class="pass" type="password" align="center" placeholder="Re-Enter Password" name="confirmation" required>
+        <button class="submit" align="center" type="submit">Register</button>
+        <p class="forgot" align="center">
+            <a href="{{url_for('login')}}">Already signed up? Login.</a>
+        </p>
+    </form>
+    </div>
+      </div>
+    </section>
+
+
+{% endblock %}

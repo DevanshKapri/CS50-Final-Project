@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change Password
+{% endblock %}
+
+{% block css %} <link href="static/css/login.css" rel="stylesheet"> {% endblock %}
+
+{% block section %}
+
+<section class="inner-page">
+      <div class="container">
+        <div class="main register">
+    <p class="covaccine-heading" align="center">Covaccine</p>
+    <p class="sign" align="center">Change your password~</p>
+    <form class="form1" action="/changepw" method="POST">
+        <input class="pass" type="password" align="center"  name="oldpw" placeholder="Enter current password" required>
+        <input class="pass" type="password" align="center" placeholder="Password" name="password" required>
+        <input class="pass" type="password" align="center" placeholder="Re-Enter Password" name="confirmation" required>
+        <button class="submit" align="center" type="submit">Save</button>
+    </form>
+    </div>
+      </div>
+</div>
+    </section>
+
+{% endblock %}

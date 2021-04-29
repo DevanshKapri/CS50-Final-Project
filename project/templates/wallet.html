@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Wallet
+{% endblock %}
+
+{% block section %}
+
+<section class="inner-page">
+<div class="container">
+
+    <div class="section-title mt-4" data-aos="zoom-out">
+        <h2>Wallet</h2>
+        <p>BALANCE</p>
+    </div>
+    <div class="card mx-auto" style="width: 18rem;">
+        <img src="static/img/avatar.jpg" style="heigh: auto; width: auto;" class="card-img-top" alt="avatar">
+        <div class="card-body">
+          <h5 class="card-title">Balance</h5>
+          <p class="card-text">{{ cash | inr }}</p>
+          <a href="#add" class="btn btn-primary">Add money</a>
+        </div>
+    </div>
+
+    <div class="section-title mt-4" data-aos="zoom-out" style="margin-top: 15px;">
+        <h2>Wallet</h2>
+        <p>Payment History</p>
+    </div>
+
+    <table class="table table-striped">
+
+
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Amount</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in history %}
+
+                <tr >
+
+                    <td>{{transaction["transct_id"]}}</td>
+
+                    {% if transaction["donation"] < 0 %}
+                        <td style="color: red;">{{transaction["donation"] | inr}}</td>
+                    {% else %}
+                        <td style="color: green;">{{transaction["donation"] | inr}}</td>
+                    {% endif %}
+
+                    <td>{{transaction["transacted"]}}</td>
+
+                </tr>
+
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out" id="add">
+          <h2>WALLET</h2>
+          <p>ADD MONEY</p>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4" data-aos="fade-right">
+            <div class="info">
+
+              <div class="phone">
+                <i class="bi bi-wallet2"></i>
+                <h4>Balance:</h4>
+                <p>{{ cash | inr }}</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+
+            <form action="/wallet" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group mt-3">
+                  <input type="number" class="form-control" name="amount" id="amount" placeholder="Amount" step="0.01" min="0.01" required>
+                </div>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Verify Password" required>
+              </div>
+              <div class="text-center"><button type="submit">Add Money</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+</section>
+</div>
+
+{% endblock %}
