@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quiz
+{% endblock %}
+
+{% block css %} <link href="static/css/quiz.css" rel="stylesheet"> {% endblock %}
+
+
+{% block section %}
+
+    <div class="jumbotron jumbotron-fluid header-box">
+        <div class="container">
+            <h1 class="display-4">Covid Vaccination Quiz!</h1>
+            <p class="lead">Microchips, infertility and changing your DNA – the development of a COVID-19
+                vaccine has caused several theories to swirl around the internet. How many of them are true?
+                See just how much you know about COVID-19 vaccines with our fact-checked quiz.</p>
+        </div>
+    </div>
+    <div class="quiz align-items-center">
+
+        <div class="section">
+            <ol>
+                <h5>
+                    <li> The COVID-19 vaccine is not safe because it has not had enough testing.</li>
+                </h5>
+                <button class="incorrect" onclick="showAnswer(1)">True</button>
+                <button class="correct" onclick="showAnswer(1)">False</button>
+                <p id="f1"></p>
+                <p id="ans1"></p>
+                <hr>
+                <h5>
+                    <li> COVID-19 vaccines cause severe side effects.</li>
+                </h5>
+                <button class="incorrect" onclick="showAnswer(2)">True</button>
+                <button class="correct" onclick="showAnswer(2)">False</button>
+                <p id="f1"></p>
+                <p id="ans2"></p>
+                <hr>
+                <h5>
+                    <li> COVID-19 vaccines contain a microchip to track the population.</li>
+                </h5>
+                <button class="incorrect" onclick="showAnswer(3)">True</button>
+                <button class="correct" onclick="showAnswer(3)">False</button>
+                <p id="f1"></p>
+                <p id="ans3"></p>
+                <hr>
+                <h5>
+                    <li> The COVID-19 vaccines that use mRNA technology will NOT alter your DNA.</li>
+                </h5>
+                <button class="correct" onclick="showAnswer(4)">True</button>
+                <button class="incorrect" onclick="showAnswer(4)">False</button>
+                <p id="f1"></p>
+                <p id="ans4"></p>
+                <hr>
+                <h5>
+                    <li> COVID-19 vaccines DO NOT cause infertility.</li>
+                </h5>
+                <button class="correct" onclick="showAnswer(5)">True</button>
+                <button class="incorrect" onclick="showAnswer(5)">False</button>
+                <p id="f1"></p>
+                <p id="ans5"></p>
+                <hr>
+                <h5>
+                    <li> COVID-19 vaccines contain fetal tissue.</li>
+                </h5>
+                <button class="incorrect" onclick="showAnswer(6)">True</button>
+                <button class="correct" onclick="showAnswer(6)">False</button>
+                <p id="f1"></p>
+                <p id="ans6"></p>
+                <hr>
+                <h5>
+                    <li> People who already had COVID-19 may still need to be vaccinated.</li>
+                </h5>
+                <button class="correct" onclick="showAnswer(7)">True</button>
+                <button class="incorrect" onclick="showAnswer(7)">False</button>
+                <p id="f1"></p>
+                <p id="ans7"></p>
+                <hr>
+                <h5>
+                    <li> COVID-19 vaccines give you COVID-19.</li>
+                </h5>
+                <button class="incorrect" onclick="showAnswer(8)">True</button>
+                <button class="correct" onclick="showAnswer(8)">False</button>
+                <p id="f1"></p>
+                <p id="ans8"></p>
+                <hr>
+                <h5>
+                    <li> People still need to wear a mask after receiving the COVID-19 vaccine.</li>
+                </h5>
+                <button class="correct" onclick="showAnswer(9)">True</button>
+                <button class="incorrect" onclick="showAnswer(9)">False</button>
+                <p id="f1"></p>
+                <p id="ans9"></p>
+                <hr>
+                <h5>
+                    <li> The flu vaccine or the pneumonia vaccine prevent COVID-19.</li>
+                </h5>
+                <button class="incorrect" onclick="showAnswer(10)">True</button>
+                <button class="correct" onclick="showAnswer(10)">False</button>
+                <p id="f1"></p>
+                <p id="ans10"></p>
+                <hr>
+                <button onClick="window.location.reload();">Reset</button>
+        </div>
+
+    </div>
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% block js %}
+    <script src="static/js/quiz.js"></script>
+    <script>
+        function showAnswer(num) {
+            switch (num) {
+                case 1:
+                    document.querySelector('#ans1').innerHTML = "The FDA has granted Emergency Use Authorizations (EUA) for the COVID-19 vaccines. This means that they have been shown to be safe and effective in data from large clinical trials. In order to receive an EUA, the vaccine manufacturers must follow at least half the people in the study for at least 2 months after they complete the vaccination series. The vaccine must be proven safe and effective in that group of people."
+                    break;
+                case 2:
+                    document.querySelector('#ans2').innerHTML = "Most side effects of vaccines, including the COVID-19 vaccines, are mild and temporary. After a vaccine is given and the body is building its defenses, mild side effects are normal and expected."
+                    break;
+                case 3:
+                    document.querySelector('#ans3').innerHTML = "A conspiracy theory has spread that Microsoft founder Bill Gates is part of a plan to put microchips into COVID-19 vaccines to track the population with cell towers using 5G technology. This myth began after Gates made a comment about having digital vaccine records. <br> This is false. No such technology exists to gather personal information or track people using microchips put into vaccines. The technology Gates commented about is not a microchip and it has not been put into use. It has nothing to do with the development, testing, or distribution of COVID-19 vaccines."
+                    break;
+                case 4:
+                    document.querySelector('#ans4').innerHTML = "The Pfizer-BioNTech and Moderna vaccines use a type of mRNA (messenger RNA) technology not used in any existing vaccine. There is no DNA in these vaccines. They cannot affect a person's DNA."
+                    break;
+                case 5:
+                    document.querySelector('#ans5').innerHTML = "Another myth spreading online is that COVID-19 vaccines can cause infertility and even miscarriage. This is based on claims that the spike protein made when you get mRNA vaccines blocks a protein needed for a pregnancy to be viable. The protein that is needed for a placenta to stay attached to the uterus is not the same protein as the SARS-CoV-2 spike protein. The antibodies made by the mRNA vaccines will not block the placental binding protein."
+                    break;
+                case 6:
+                    document.querySelector('#ans6').innerHTML = "The AstraZeneca COVID-19 vaccine does not contain any fetal tissue. The vaccine is made, in part, by growing a genetically modified adenovirus in cells from embryonic kidney tissue that come from an abortion done in the 1970s. But none of those cells are in the vaccine."
+                    break;
+                case 7:
+                    document.querySelector('#ans7').innerHTML = "Early data suggests natural immunity from COVID-19 infection may not last very long. More studies are needed. But since reinfection with COVID-19 is possible, the CDC says people may be advised to get a COVID-19 vaccine even if they have been infected before with COVID-19."
+                    break;
+                case 8:
+                    document.querySelector('#ans8').innerHTML = "You can’t get COVID-19 from COVID-19 vaccines. None of the vaccines for COVID-19 that are in development or use in the U.S. have the live virus that causes COVID-19."
+                    break;
+                case 9:
+                    document.querySelector('#ans9').innerHTML = "The vaccines for COVID-19 have so far shown they work to prevent serious illness from the coronavirus that causes it. It is not known if people could be infected and have no symptoms. This means a person could get the vaccine and may still be able to spread the virus to others. Until a majority of the population is has had the vaccine, which will take time, the virus can spread and infect people."
+                    break;
+                case 10:
+                    document.querySelector('#ans10').innerHTML = "Vaccines against pneumonia, such as pneumococcal vaccine and Haemophilus influenza type B (Hib) vaccine, and vaccines against influenza do not provide protection against COVID-19."
+            }
+        }
+    </script>
+    {% endblock %}

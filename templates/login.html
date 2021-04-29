@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block css %} <link href="static/css/login.css" rel="stylesheet"> {% endblock %}
+
+{% block section%}
+
+    <div class="main login">
+    <p class="covaccine-heading" align="center">Covaccine</p>
+    <p class="sign" align="center">Please sign in!</p>
+    <form class="form1" action="/login" method="POST">
+        <input class="un " type="email" align="center" autofocus name="email" autocomplete="off" placeholder="Email" required>
+        <input class="pass" type="password" align="center" placeholder="Password" name="password" required>
+        <button class="submit" align="center" type="submit">Login</button>
+        <p class="forgot" align="center">
+            <a href="{{url_for('register')}}">Do not have an account? Register here.</a>
+        </p>
+    </form>
+    </div>
+
+{% endblock %}
