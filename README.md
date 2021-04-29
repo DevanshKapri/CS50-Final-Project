@@ -11,6 +11,7 @@ This is my final project for [Harvard CS50x](https://cs50.harvard.edu/x/2020/) c
 - CS50 library
 - werkzeug
 - Flask
+- jinja2
 - other libraries and packages
 ### How it works?
 The website home page has various resources and information regarding COVID-19 vaccination. The user can Login/Register to the website to maintain their profile where
