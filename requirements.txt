@@ -4,5 +4,4 @@ Flask-session
 requests
 werkzeug
 datetime
-urllib
 functools
